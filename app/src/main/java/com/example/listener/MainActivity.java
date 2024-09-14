@@ -1,5 +1,7 @@
 package com.example.listener;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -35,6 +37,9 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
     }
 
     public void clickedSwitchBtn(View view) {
-        
+        Intent points = new Intent(this , com.example.listener.points.class);
+        points.putExtra("red", redPoints);
+        points.putExtra("blue", bluePoints);
+        finish();
     }
 }
