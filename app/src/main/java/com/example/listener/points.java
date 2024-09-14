@@ -3,8 +3,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
 
 public class points extends AppCompatActivity {
+    TextView tvr , tvb;
     int Redscore, Bluescore;
 
     @Override
@@ -15,7 +18,12 @@ public class points extends AppCompatActivity {
         Intent gi = getIntent();
         Redscore = gi.getIntExtra("Red",0);
         Bluescore = gi.getIntExtra("Blue",0);
-        tvr.setText("red score: " + scoreRed);
-        tvb.setText("Blue score: " + scoreBlue);
+        tvr.setText("the red score is: " + Redscore);
+        tvb.setText("the Blue score is : " + Bluescore);
+
+    }
+
+    public void clickedReturn(View view) {
+        finish();
     }
 }

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnLongClickListener{
     Button btnRed,btnBlue,btnSwitch;
@@ -32,14 +33,15 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
 
     @Override
     public boolean onLongClick(View v) {
+        Toast.makeText(this, "You have successfully pressed the red button!", Toast.LENGTH_SHORT).show();
         redPoints += 2;
         return false;
     }
 
     public void clickedSwitchBtn(View view) {
-        Intent points = new Intent(this , com.example.listener.points.class);
-        points.putExtra("red", redPoints);
-        points.putExtra("blue", bluePoints);
-        finish();
+        Intent si = new Intent(this , points.class);
+        si.putExtra("Red", redPoints);
+        si.putExtra("Blue", bluePoints);
+        startActivity(si);
     }
 }
