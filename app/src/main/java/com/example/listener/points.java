@@ -16,6 +16,8 @@ public class points extends AppCompatActivity {
         setContentView(R.layout.activity_points);
         initViews();
 
+        tvr.setText(0 + "");
+        tvb.setText(0 + "");
 
         Intent gi = getIntent();
         Redscore = gi.getIntExtra("Red",0);

@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         setContentView(R.layout.activity_main);
         initViews();
 
+
         btnBlue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -42,6 +43,9 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         Intent si = new Intent(this , points.class);
         si.putExtra("Red", redPoints);
         si.putExtra("Blue", bluePoints);
+        redPoints = 0;
+        bluePoints = 0;
         startActivity(si);
+
     }
 }
