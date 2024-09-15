@@ -14,6 +14,8 @@ public class points extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_points);
+        initViews();
+
 
         Intent gi = getIntent();
         Redscore = gi.getIntExtra("Red",0);
@@ -21,6 +23,11 @@ public class points extends AppCompatActivity {
         tvr.setText("the red score is: " + Redscore);
         tvb.setText("the Blue score is : " + Bluescore);
 
+    }
+
+    private void initViews() {
+        tvr = findViewById(R.id.tvr);
+        tvb = findViewById(R.id.tvb);
     }
 
     public void clickedReturn(View view) {
